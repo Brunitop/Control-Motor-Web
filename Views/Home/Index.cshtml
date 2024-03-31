@@ -1,0 +1,29 @@
+﻿@model string
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Control</title>
+    <!-- Enlace al archivo de estilos -->
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Mostrar la imagen del motor -->
+        <div id="motorContainer">
+            <img id="motor" src="/images/detenido.gif" alt="Motor">
+        </div>
+
+        <div class="buttons">
+            <!-- Formulario para controlar el motor -->
+            <form id="controlForm" method="post" action="/Motor/ControlMotor">
+                <button name="action" value="left">Girar Izquierda</button>
+                <button name="action" value="pause">Pausa</button>
+                <button name="action" value="right">Girar Derecha</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

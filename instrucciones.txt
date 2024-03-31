@@ -1,0 +1,15 @@
+Desde la terminal
+1. Descarga el código fuente del repositorio de GitHub en tu dispositivo.
+Abre una terminal y navega hasta el directorio donde has descargado el código fuente.
+2. Utiliza el comando 'dotnet run' para ejecutar la aplicación.
+Asegúrate de tener instalado el SDK de .NET Core en tu dispositivo.
+3. Accede a la aplicación en el navegador. Navega a la dirección http://localhost:5000
+La aplicación estará en funcionamiento y podrás interactuar con ella desde el navegador.
+
+Desde Visual Studio
+1. Descarga el código fuente del repositorio de GitHub en tu dispositivo. 
+Abre Visual Studio y selecciona la opción "Abrir proyecto o solución".
+2. Navega hasta el directorio donde has descargado el código fuente y selecciona el archivo de solución (.sln) para abrirlo en Visual Studio.
+3. Haz clic en el botón "Iniciar" en Visual Studio para compilar y ejecutar la aplicación.
+Visual Studio abrirá automáticamente el navegador web predeterminado y cargará la aplicación en la dirección http://localhost:5000
+La aplicación estará en funcionamiento y podrás interactuar con ella desde el navegador.

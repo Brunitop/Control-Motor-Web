@@ -1,19 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplicationMotor.Controllers
 {
+
     public class MotorController : Controller
     {
-        public IActionResult Index()
-        {
-            // Por defecto, muestra el GIF de detenido
-            return View("~/Views/Home/Index.cshtml", "/images/detenido.gif");
-        }
-
         [HttpPost]
         public IActionResult ControlMotor(string action)
         {
-            string gifPath = "";
+            string gifPath = "/images/detenido.gif";
 
             // Determina qué GIF cargar en función del botón presionado
             switch (action)
@@ -33,7 +28,8 @@ namespace WebApplicationMotor.Controllers
                     break;
             }
 
-            return View("~/Views/Home/Index.cshtml", gifPath);
+            ViewBag.GifPath = gifPath;
+            return View("~/Views/Home/Index.cshtml");
         }
     }
 }

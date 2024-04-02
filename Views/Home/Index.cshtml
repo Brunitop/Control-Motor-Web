@@ -1,6 +1,4 @@
-﻿@model string
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +11,13 @@
     <div class="container">
         <!-- Mostrar la imagen del motor -->
         <div id="motorContainer">
-            <img id="motor" src="/images/detenido.gif" alt="Motor">
+            <img id="motor" src="@ViewBag.GifPath" alt="Motor">
+
+            <!-- Elementos para mostrar la fecha y la hora -->
+            <div id="dateTimeContainer">
+                <span id="date"></span>
+                <span id="time"></span>
+            </div>
         </div>
 
         <div class="buttons">
@@ -25,5 +29,29 @@
             </form>
         </div>
     </div>
+
+    <!-- Script para actualizar la fecha y la hora en tiempo real -->
+    <script>
+        // Función para obtener la fecha y la hora actual
+        function getCurrentDateTime() {
+            var now = new Date();
+            var date = now.toLocaleDateString();
+            var time = now.toLocaleTimeString();
+            return { date: date, time: time };
+        }
+
+        // Función para actualizar la fecha y la hora en los elementos HTML
+        function updateDateTime() {
+            var dateTime = getCurrentDateTime();
+            document.getElementById("date").textContent = "Fecha: " + dateTime.date;
+            document.getElementById("time").textContent = "Hora: " + dateTime.time;
+        }
+
+        // Actualizar la fecha y la hora cada segundo
+        setInterval(updateDateTime, 1000);
+
+        // Llamar a la función updateDateTime para mostrar la fecha y la hora al cargar la página
+        updateDateTime();
+    </script>
 </body>
 </html>
